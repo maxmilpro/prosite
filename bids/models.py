@@ -15,9 +15,9 @@ class Proposal(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     #title = project.address
     date_created = models.DateField(auto_now_add=True)
-    date_modified = models.TimeDateField(auto_now=True)
+    date_modified = models.DateTimeField(auto_now=True)
 
 class Section(models.Model):
     proposal = models.ForeignKey(Proposal, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
-    details = models.TextField
+    details = models.TextField(default='')
