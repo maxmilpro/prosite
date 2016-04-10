@@ -11,6 +11,9 @@ class Project(models.Model):
     state = models.CharField(max_length=2)
     zip_code = models.IntegerField()
 
+    def __str__(self):
+        return self.address
+
 class Proposal(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     #title = project.address
