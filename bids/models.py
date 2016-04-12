@@ -12,6 +12,7 @@ class Customer(models.Model):
     state = models.CharField(max_length=2)
     zip_code = models.IntegerField()
     email = models.EmailField()
+    #add phone number
 
 class Project(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
