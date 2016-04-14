@@ -14,6 +14,9 @@ class Customer(models.Model):
     email = models.EmailField()
     #add phone number
 
+    def __str__(self):
+        return self.street
+
 class Project(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)

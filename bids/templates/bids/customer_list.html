@@ -1,15 +1,20 @@
-{% block content %}
 <h1>Customers</h1>
 <table>
   <tr>
     <th>Name</th>
-    <th>Zip Code</th>
+    <th>Address</th>
   </tr>
   {% for customer in all_customers %}
   <tr>
-    <td>{{ customer.first_name }}</td>
-    <td>{{ customer.zip_code  }}</td>
+    <td>{{ customer.first_name }} {{ customer.last_name }}</td>
+    <td>
+        <ul style="list-style-type:none">
+          <li>{{ customer.street }}</li>
+          <li>{{customer.city }}</li>
+          <li>{{ customer.state }}</li>
+          <li>{{ customer.zip_code  }}</li>
+        </ul>
+    </td>
   </tr>
   {% endfor %}
 </table>
-{% endblock %}
