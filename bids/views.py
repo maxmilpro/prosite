@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView
-from bids.models import Customer, Project
+from django.views.generic import ListView, DetailView
+from bids.models import Customer, Project, Proposal
 
 '''
 '''
@@ -14,5 +14,10 @@ class CustomerList(ListView):
     model = Customer
     template_name = 'bids/customer_list.html'
     context_object_name = 'all_customers'
+
+class ProposalView(DetailView):
+    model = Proposal
+    template_name = 'bids/proposal_view.html'
+    #context_object_name = 
 
 
