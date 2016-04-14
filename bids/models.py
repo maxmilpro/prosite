@@ -25,13 +25,17 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
+    def show_customer(self):
+        c = Customer.objects.get(pk=self.customer_id)
+        return c
+
 class Proposal(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     date_created = models.DateField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
 
     #create total_cost function based on cost of each Section
-    def __int__(self):
+    def __str__(self):
         title = str(self.date_created)
         return title
 

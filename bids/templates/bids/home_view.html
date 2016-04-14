@@ -7,9 +7,11 @@
   </tr>
   {% for project in projects %}
   <tr>
-    <td>{{ project.customer_id }}</td>
+    <td>{{ project.show_customer }}</td>
     <td>{{ project.title }}</td>
-    <td>{{ project.proposal_set.all }}</td>
+    {% for proposal in project.proposal_set.all %}
+    <td>{{ proposal }}</td>
+    {% endfor %}
   </tr>
   {% endfor %}
 </table>
