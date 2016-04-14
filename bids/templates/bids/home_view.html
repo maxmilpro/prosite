@@ -1,0 +1,15 @@
+<h1>Bids</h1>
+<table>
+  <tr>
+    <th>Customer</th>
+    <th>Project</th>
+    <th>Proposal</th>
+  </tr>
+  {% for project in projects %}
+  <tr>
+    <td>{{ project.customer_id }}</td>
+    <td>{{ project.title }}</td>
+    <td>{{ project.proposal_set.all }}</td>
+  </tr>
+  {% endfor %}
+</table>

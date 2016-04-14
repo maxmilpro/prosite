@@ -15,7 +15,8 @@ class Customer(models.Model):
     #add phone number
 
     def __str__(self):
-        return self.street
+        full_name = self.first_name + ' ' + self.last_name
+        return full_name
 
 class Project(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
@@ -30,8 +31,9 @@ class Proposal(models.Model):
     date_modified = models.DateTimeField(auto_now=True)
 
     #create total_cost function based on cost of each Section
-    def __str__(self):
-        return self.date_created
+    def __int__(self):
+        title = str(self.date_created)
+        return title
 
     '''def total_cost(self)    
         for section in self.section_set.all():
