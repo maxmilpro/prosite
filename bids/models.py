@@ -30,11 +30,19 @@ class Proposal(models.Model):
     date_modified = models.DateTimeField(auto_now=True)
 
     #create total_cost function based on cost of each Section
+    def __str__(self):
+        return self.date_created
+
+    '''def total_cost(self)    
+        for section in self.section_set.all():
+            cost = section.cost
+            total = total + cost'''
 
 class Section(models.Model):
     proposal = models.ForeignKey(Proposal, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     details = models.TextField(default='')
     cost = models.IntegerField(null=True)
+
 
 
