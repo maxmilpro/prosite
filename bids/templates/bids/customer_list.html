@@ -1,8 +1,15 @@
 {% block content %}
-    <h1>Customers</h1>
-    <ul>
-        {% for customer in object_list %}
-            <li>{{ customer.first_name }}</li>
-        {% endfor %}
-    </ul>
+<h1>Customers</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Zip Code</th>
+  </tr>
+  {% for customer in all_customers %}
+  <tr>
+    <td>{{ customer.first_name }}</td>
+    <td>{{ customer.zip_code  }}</td>
+  </tr>
+  {% endfor %}
+</table>
 {% endblock %}

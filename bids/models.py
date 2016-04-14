@@ -5,12 +5,12 @@ from django.utils import timezone
 
 
 class Customer(models.Model):
-    firt_name = models.CharField(max_length=25)
+    first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
     street = models.CharField(max_length=100)
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2)
-    zip_code = models.IntegerField()
+    zip_code = models.IntegerField(null=True)
     email = models.EmailField()
     #add phone number
 
@@ -32,6 +32,6 @@ class Section(models.Model):
     proposal = models.ForeignKey(Proposal, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     details = models.TextField(default='')
-    cost = models.IntegerField()
+    cost = models.IntegerField(null=True)
 
 
