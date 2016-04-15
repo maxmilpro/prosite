@@ -50,5 +50,8 @@ class Section(models.Model):
     details = models.TextField(default='')
     cost = models.IntegerField(null=True)
 
+    def __str__(self):
+        return self.title
+
 
 
