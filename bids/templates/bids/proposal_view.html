@@ -1,1 +1,15 @@
 <h1>{{ proposal }}</h1>
+<table>
+  <tr>
+    <th>Sectio</th>
+    <th>Details</th>
+    <th>Cost</th>
+  </tr>
+  {% for section in proposal.section_set.all %}
+  <tr>
+    <td><a href="{% url 'bids:section' section.id %}">{{ section.title }}</td>
+    <td>{{ section.details }}</td>
+    <td>{{ section.cost }}</td>
+  </tr>
+  {% endfor %}
+</table>

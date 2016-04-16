@@ -25,9 +25,6 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
-    def show_customer(self):
-        c = Customer.objects.get(pk=self.customer_id)
-        return c
 
 class Proposal(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
