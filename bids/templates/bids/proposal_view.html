@@ -1,9 +1,14 @@
 <h1>{{ proposal }}</h1>
+      <ul>
+        <li><a href="{% url 'bids:create_section' proposal.id %}">Create</a></li>
+      </ul>
+<br>
 <table>
   <tr>
     <th>Sectio</th>
     <th>Details</th>
     <th>Cost</th>
+    <th>Action</th>
   </tr>
   {% for section in proposal.section_set.all %}
   <tr>

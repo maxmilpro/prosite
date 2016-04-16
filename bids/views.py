@@ -41,6 +41,11 @@ class ProposalCreate(CreateView):
     fields = ['project']
     success_url = reverse_lazy('bids:home')
 
+class SectionCreate(CreateView):
+    model = Section
+    fields = ['proposal', 'title', 'details', 'cost']
+    success_url = reverse_lazy('bids:proposal')
+
 
 
 
