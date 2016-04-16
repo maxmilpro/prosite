@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView
+from django.core.urlresolvers import reverse_lazy
 from bids.models import Customer, Project, Proposal, Section
 
 '''
@@ -23,5 +25,22 @@ class ProposalView(DetailView):
 class SectionView(DetailView):
     model = Section
     template_name = 'bids/section_view.html'
+
+class CustomerCreate(CreateView):
+    model = Customer
+    fields = ['first_name', 'last_name', 'street', 'city', 'state', 'zip_code', 'email']
+    success_url = reverse_lazy('bids:create_project')
+
+class ProjectCreate(CreateView):
+    model = Project
+    fields = ['title', 'customer']
+    success_url = reverse_lazy('bids:create_proposal')
+
+class ProposalCreate(CreateView):
+    model = Proposal
+    fields = ['project']
+    success_url = reverse_lazy('bids:home')
+
+
 
 
