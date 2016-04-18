@@ -30,6 +30,8 @@ class SectionView(DetailView):
     model = Section
     template_name = 'bids/section_view.html'
 
+#Create views for Customer, Project, Proposal, and Section models    
+
 class CustomerCreate(CreateView):
     model = Customer
     fields = ['first_name', 'last_name', 'street', 'city', 'state', 'zip_code', 'email']
@@ -49,6 +51,8 @@ class SectionCreate(CreateView):
     model = Section
     fields = ['proposal', 'title', 'details', 'cost']
     #success_url = reverse_lazy('bids:proposal')
+
+#Update views for 
 
 
 
