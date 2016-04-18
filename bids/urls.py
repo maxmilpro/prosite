@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from bids.views import (CustomerList, HomeView, ProposalView, SectionView, CustomerCreate, 
-ProjectCreate, ProposalCreate, SectionCreate)
+ProjectCreate, ProposalCreate, SectionCreate, UpdateSection)
 
 
 app_name = 'bids'
@@ -12,5 +12,5 @@ urlpatterns = [
     url(r'^customer/create/$', CustomerCreate.as_view(), name='create_customer'),
     url(r'^project/create/$', ProjectCreate.as_view(), name='create_project'),
     url(r'^proposal/create/$', ProposalCreate.as_view(), name='create_proposal'),
-    url(r'^proposal/(?P<pk>[0-9]+)/sections/create/$', SectionCreate.as_view(), name='create_section')
+    url(r'^proposal/(?P<pk>[0-9]+)/sections/create/$', SectionCreate.as_view(), name='create_section'), 
 ]

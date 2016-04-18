@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.core.urlresolvers import reverse_lazy
 from bids.models import Customer, Project, Proposal, Section
 
@@ -26,6 +26,7 @@ class SectionView(DetailView):
     model = Section
     template_name = 'bids/section_view.html'
 
+
 #Create views for Customer, Project, Proposal, and Section models    
 
 class CustomerCreate(CreateView):
@@ -48,8 +49,8 @@ class SectionCreate(CreateView):
     fields = ['proposal', 'title', 'details', 'cost']
     #success_url = reverse_lazy('bids:proposal')
 
-#Update views for 
 
+#Update views for 
 
 
 
