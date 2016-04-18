@@ -5,7 +5,7 @@ ProjectCreate, ProposalCreate, SectionCreate)
 
 app_name = 'bids'
 urlpatterns = [
-    url(r'^home/$', HomeView.as_view(), name='home'),
+    url(r'^$', HomeView.as_view(), name='home'),
     url(r'^customers/$', CustomerList.as_view(), name='customers'),
     url(r'^proposal/(?P<pk>[0-9]+)/$', ProposalView.as_view(), name='proposal'),
     url(r'^proposal/(?P<pk>[0-9]+)/sections/$', SectionView.as_view(), name='section'),
