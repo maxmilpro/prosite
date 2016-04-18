@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django.core.urlresolvers import reverse
 
 
 class Customer(models.Model):
@@ -49,6 +50,9 @@ class Section(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('bids:proposal', kwargs={'pk': self.proposal.pk})
 
 
 

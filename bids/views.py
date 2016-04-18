@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
+<<<<<<< HEAD
 from django.core.urlresolvers import reverse_lazy, reverse
+=======
+from django.core.urlresolvers import reverse_lazy, resolve
+>>>>>>> create-formviews
 from bids.models import Customer, Project, Proposal, Section
 
 '''
@@ -44,7 +48,7 @@ class ProposalCreate(CreateView):
 class SectionCreate(CreateView):
     model = Section
     fields = ['proposal', 'title', 'details', 'cost']
-    success_url = reverse_lazy('bids:proposal')
+    #success_url = reverse_lazy('bids:proposal')
 
 
 
