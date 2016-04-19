@@ -5,7 +5,7 @@
 <br>
 <table>
   <tr>
-    <th>Sectio</th>
+    <th>Section</th>
     <th>Details</th>
     <th>Cost</th>
     <th>Action</th>
@@ -15,6 +15,7 @@
     <td><a href="{% url 'bids:section' section.id %}">{{ section.title }}</a></td>
     <td>{{ section.details }}</td>
     <td>{{ section.cost }}</td>
+    <td><a href="{% url 'bids:update_section' section.id %}">Update</a></td>
   </tr>
   {% endfor %}
 </table>

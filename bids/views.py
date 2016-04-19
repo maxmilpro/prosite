@@ -51,6 +51,9 @@ class SectionCreate(CreateView):
 
 
 #Update views for 
-
+class UpdateSection(UpdateView):
+    model = Section
+    fields = ['proposal', 'title', 'details', 'cost']
+    template_name_suffix = '_update_form'
 
 
