@@ -1,9 +1,12 @@
+{% extends 'bids/base.html' %}
+
+{% block content %}
 <h1>{{ proposal }}</h1>
       <ul>
         <li><a href="{% url 'bids:create_section' proposal.id %}">Create</a></li>
       </ul>
 <br>
-<table>
+<table class="table table-hover">
   <tr>
     <th>Section</th>
     <th>Details</th>
@@ -19,3 +22,4 @@
   </tr>
   {% endfor %}
 </table>
+{% endblock %}
