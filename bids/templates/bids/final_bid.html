@@ -1,0 +1,8 @@
+<!-- object=proposal -->
+{% for section in proposal.section_set.all %}
+<h2>{{ section.title }}</h2>
+  <ul>
+    <li>{{ section.details }}</li>
+    <li>{{ section.cost }}</li>
+  </ul>
+{% endfor %}
