@@ -1,8 +1,42 @@
-<!-- object=proposal -->
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="/../static/css/final_bid.css">
+</head>
+
+<body>
+
+<!-- ProConstruction Title -->
+<div id="title">
+  <h2>ProConstruction</h2>
+  <p>745 Grand Avenue ~ South San Francisco, CA 94080<br>650-589- 9795 ~ Fax: 650-952- 6001</p>
+</div>
+
+<!-- Contact Info -->
+<div>
+  <div>
+
+  </div>
+  <div>
+  </div>
+</div>
+
+<!-- Sections -->
+<div>
 {% for section in proposal.section_set.all %}
-<h2>{{ section.title }}</h2>
-  <ul>
-    <li>{{ section.details }}</li>
-    <li>{{ section.cost }}</li>
-  </ul>
+  <h2>{{ section.title }}</h2>
+    <ul>
+      <li>{{ section.details }}</li>
+      <li>{{ section.cost }}</li>
+    </ul>
 {% endfor %}
+</div>
+
+<!-- Totals -->
+<div>
+
+</div>
+
+</body>
