@@ -3,40 +3,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link type="text/css" rel="stylesheet" href="/../static/css/final_bid.css">
+  <title>Prosite Proposal</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" rel="stylesheet" href="/../static/css/final_bid.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-
+<div style="margin:auto;width:750px">
 <!-- ProConstruction Title -->
-<div id="title">
-  <h2>ProConstruction</h2>
-  <p>745 Grand Avenue ~ South San Francisco, CA 94080<br>650-589- 9795 ~ Fax: 650-952- 6001</p>
-</div>
+  <div id="title">
+    <h2>ProConstruction</h2>
+    <p>Tel: 745 Grand Avenue ~ South San Francisco, CA 94080<br>650-589- 9795 ~ Fax: 650-952- 6001</p>
+  </div>
 
 <!-- Contact Info -->
-<div>
-  <div>
-
+  <div class="container-fluid">
+    <div style="float:left">
+      <ul style="list-style-type:none">
+        <li><b>Client:</b></li>
+        <li>{{ proposal.project.customer }}</li>
+        <li>{{ proposal.project.customer.street }}</li>
+        <li>{{ proposal.project.customer.city }}, {{ proposal.project.customer.state }} {{ proposal.project.customer.zip_code }}</li>
+      </ul>
+    </div>
+    <div style="float:right">
+      <ul style="list-style-type:none">
+        <li><b>Scope:</b></li>
+        <li>First floor remodel</li>
+      </ul>
+    </div>
   </div>
-  <div>
-  </div>
-</div>
 
 <!-- Sections -->
-<div>
 {% for section in proposal.section_set.all %}
-  <h2>{{ section.title }}</h2>
+  <div class="container-fluid">
+    <div style="float:left"><h2>{{ section.title }}</h2></div>
+    <div style="float:right"><h3>${{ section.cost }}</h3></div>
+  </div>
+  <div class="container-fluid">
     <ul>
       <li>{{ section.details }}</li>
-      <li>{{ section.cost }}</li>
     </ul>
+  </div>
 {% endfor %}
-</div>
 
 <!-- Totals -->
-<div>
+  <div>
 
+  </div>
 </div>
 
 </body>
