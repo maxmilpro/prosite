@@ -26,6 +26,10 @@ class SectionView(DetailView):
     model = Section
     template_name = 'bids/section_view.html'
 
+class DocView(DetailView):
+    model = Proposal
+    template_name = 'bids/final_bid.html'
+
 
 #Create views for Customer, Project, Proposal, and Section models    
 
